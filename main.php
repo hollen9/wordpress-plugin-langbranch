@@ -1,9 +1,9 @@
 <?php
 /**
 * Plugin Name: LangBranch Shortcode
-* Plugin URI: https://hollen9.com/plugin-langbranch-shortcode/
-* Description: Display desired string based on current get_locale();
-* Version: 1.0
+* Plugin URI: http://hollen9.com/
+* Description: Display correspond strings based on current get_locale();
+* Version: 1.0.1
 * Author: Hollen9
 * Author URI: http://hollen9.com/
 **/
@@ -45,9 +45,9 @@ if (!function_exists('langbranch_function')) {
         
         $html = null;
         $locale = strtolower(get_locale());
-        $aio_flag = $atts['aio'];
+        // $aio_flag = $atts['aio'];
         
-        if ($aio_flag || $content === null || $content === "") {
+        if (array_key_exists('aio', $atts) || $content === null || $content === "") {
             // ==[Branch Mode]==
             $doneOrAborted = false;
             $matched_locale = strtolower($locale);
